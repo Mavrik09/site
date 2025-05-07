@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
+    <style>
+        body {
+            background: right, lightblue; /* Cor de fundo */
+            text-align: center; /* Centraliza elementos inline automaticamente */
+            font-family: "Comic Sans MS", Arial, sans-serif; /*Fonte */
+        }
+        img {
+            display: block; /* Centraliza a imagem */
+            margin: auto;
+            max-width: 100px; /* Garante que a imagem não fique grande demais */
+            margin-top: 100px; /*Espaçamento entre o topo e a logo*/
+        }
+
+        img:hover { /* Aumentar a logo quando o mause passa por cima*/
+            transform: scale(1.1); 
+            transition: 0.5s;
+        }
+
+        h1 {
+            font-size: 40px; /* Tamanho da fonte do titulo*/
+        }
+
+        p {
+            font-size: 18px; /* Tamanho da fonte da frase "Vem ser família com a gente!"*/
+        }
+
+        table {
+            background-color: beige;
+            font-size: 20px; /*Tamanho da fonte*/
+            border-radius: 20px; /*Arrendondamento da borda*/
+            overflow: hidden; 
+            margin: auto; /* Centralsiza a tabela */
+            
+
+        }
+        
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 20px; /*Arrendondamento da borda*/
+            border: none; /* Bordas externa*/
+        }
+
+        /* Estilização dos links */
+        a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color:lightgray;
+            text-decoration: none;
+            border-radius: 5px; /*Arrendondamento da borda*/
+            color: black;
+            font-weight: bold;
+            white-space: nowrap;
+            margin: 10px;
+            
+        }
+
+        a:hover { /* Efeito ao passar o mouse */
+            background-color: darkgray; 
+        
+        }
+
+        /* Estiliza a caixa de texto escondida */
+        #conteudoSobre {
+            display: none; /* Oculta o conteúdo inicialmente */
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid black;
+            background-color: lightgray;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: darkblue;
+            color: white;
+            transform: scale(1.1);
+        
+        }
+
+        nav { /* Fixa o menu no topo */
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0077cc;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        
+        }
+
+        nav a { /* Cor atrás dos butões do topo*/
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        
+        }
+
+        nav a:hover {
+            color: rgb(0, 110, 255);
+        
+        }
+
+        #topo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* Esconde até o usuário rolar a página */
+        
+        }
+
+        #topo:hover {
+            background-color: #0055aa;
+
+        }
+
+    </style>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("iDmp_IU5-d-9oCtb0"); // public key
+        })();
+    </script>
+    
+</head>
+<body> 
+    <nav>
+        <a href="#" id="btnInicio">Início</a>
+        <div id="conteudoInicio" style="display: none;">
+            <p>Bem-vindo ao início do nosso site! Aqui você pode navegar para outras seções.</p>
+        </div>
+
+        <a href="#" id="btnSobre">Sobre</a>
+        <div id="conteudoSobre" style="display: none;">
+            <p>Este é um site feito para compartilhar informações importantes. Aqui você encontrará conteúdos sobre diversos temas e atualizações frequentes.</p>
+        </div>
+
+        <a href="#" id="btnContato">Contato</a>
+        <div id="conteudoContato" style="display: none;">
+            <p> Telefone/Whatsapp: (98) 98888-9888
+                E-mail: nãoseioqlá@gmail.com
+            </p>
+        </div>
+
+        <script>
+            // Início
+            let botaoInicio = document.getElementById("btnInicio");
+            let conteudoInicio = document.getElementById("conteudoInicio");
+
+            botaoInicio.addEventListener("click", function(event) {
+            event.preventDefault();
+            conteudoInicio.style.display = (conteudoInicio.style.display === "none") ? "block" : "none";
+            });
+
+            // Sobre
+            let botaoSobre = document.getElementById("btnSobre");
+            let conteudoSobre = document.getElementById("conteudoSobre");
+
+            botaoSobre.addEventListener("click", function(event) {
+            event.preventDefault();
+            conteudoSobre.style.display = (conteudoSobre.style.display === "none") ? "block" : "none";
+           });
+
+           //Contato
+           let botaoContato = document.getElementById("btnContato");
+           let conteudoContato = document.getElementById("conteudoContato");
+
+            botaoContato.addEventListener("click", function(event) {
+            event.preventDefault();
+            conteudoContato.style.display = (conteudoContato.style.display === "none") ? "block" : "none";
+           });
+        </script>
+
+        
+    </nav>
+    
+    <img src="Design sem nome.png" alt="Logo" width="70"> 
+    <h1>ABBA PAI</h1>
+    <p>Vem ser família com a gente!</p>
+
+    <table>
+        <tr>
+            <th>Dia de culto</th>
+        </tr>
+        <tr>
+            <td> Todas quarta-feiras</td>
+        </tr>
+        <tr>        
+            <td> Todos domingos</td>
+        </tr>
+    </table>
+
+    <div> 
+        <a href="https://www.instagram.com/abbapaicha" target="_blank">Instagram</a>
+    </div>
+    
+
+    <h1 id="titulo"></h1>
+    <script>
+        let texto = "Bem-vindo a ABBA PAI!"; /*Frase que aparece antes do video*/
+        let index = 0;
+
+        function digitar() {
+            if (index < texto.length) {
+                document.getElementById("titulo").innerHTML += texto.charAt(index);
+                index++;
+                setTimeout(digitar, 100);
+            }
+        }
+        digitar();
+    </script>
+
+    <h2></h2>
+    <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/un0hILftimI?si=fbjHTSsJb5-PA62-" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+    </iframe>
+    
+    <h2>Nosso Endereço</h2> 
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3146.7233548730665!2d-43.3634217!3d-3.7321904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x78ccd9907693b77%3A0xebe5ce7187c7ae02!2sMinist%C3%A9rio%20Apost%C3%B3lico%20Abba%20Pai!5e1!3m2!1spt-BR!2sbr!4v1742679852052!5m2!1spt-BR!2sbr" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"> 
+
+
+    </iframe>
+
+    <button id="topo">⬆ Voltar ao Topo</button>
+
+    <script>
+        let botaoTopo = document.getElementById("topo");
+    
+        window.onscroll = function() {
+            if (document.documentElement.scrollTop > 200) {
+                botaoTopo.style.display = "block";
+            } else {
+                botaoTopo.style.display = "none";
+            }
+        };
+    
+        botaoTopo.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    
+    </script>
+    
+    <h2>Tire Suas Dúvidas</h2>
+
+    <form id="contato-form">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+
+        <p id="mensagem-confirmacao" style="display: none; color: green;">✅ Mensagem enviada com sucesso!</p>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+        emailjs.init("iDmp_IU5-d-9oCtb0"); //public key aqui
+        })();
+
+        document.getElementById("contato-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        emailjs.sendForm('service_meaugqv', 'template_o4bfu7s', this)
+        .then(function() {
+            document.getElementById("mensagem-confirmacao").style.display = "block";
+            document.getElementById("contato-form").reset();
+        }, function(error) {
+            alert("❌ Erro ao enviar: " + JSON.stringify(error));
+        });
+    });
+</script>
+   
+
+</body>
+
+<style>
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        padding: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+        margin: 10px;
+        text-decoration: none;
+        color: black;
+
+    }
+    
+    /*Aparência do mapa*/
+    iframe {
+        display: block; 
+        margin: 20px auto; /* Centraliza o mapa */
+        border-radius: 10px; /* Borda arredondada */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Efeito de sombra */
+    }
+
+    form {
+        width: 300px;
+        margin: auto;
+        padding: 40px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: rgba(230, 108, 108, 0.938);
+
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid gray;
+        border-radius: 5px;
+
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 10px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: darkblue;
+    }
+
+
+</style>
+
